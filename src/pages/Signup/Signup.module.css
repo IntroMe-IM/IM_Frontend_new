@@ -1,0 +1,156 @@
+.signup {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
+}
+
+.header {
+	position: relative;
+	margin-top: 40px;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: center;
+	margin-bottom: 40px;
+}
+
+.header a {
+	position: absolute;
+	left: 4%;
+}
+
+.header p {
+	margin: 0;
+	font-size: 1.2rem;
+}
+
+.intro {
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 40px;
+}
+
+.intro p {
+	margin: 0;
+	font-size: 1.5rem;
+}
+
+.signupForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.signupForm input {
+	width: 90%;
+	height: 56px;
+	border: 0;
+	font-size: 16px;
+	margin: auto;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #262626;
+	border-radius: 0;
+}
+
+.signupForm input:focus {
+	outline: none;
+}
+
+.phone {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 90%;
+	margin: auto;
+}
+
+.phone input {
+	width: 100%;
+	height: 56px;
+	border: 0;
+	font-size: 16px;
+	border-bottom: 1px solid #262626;
+	margin-right: 3%;
+	border-radius: 0;
+}
+
+.verifyButton {
+	background-color: #4755d7;
+	color: white;
+	font-size: 16px;
+	border: 0;
+	border-radius: 8px;
+	width: 45%;
+	height: 56px;
+	margin: auto;
+	padding: 0;
+	position: relative;
+}
+
+.verifyButton:hover {
+	background-color: #3a48c0;
+}
+
+.verifyButton:active {
+	background-color: #2e3a9f;
+}
+
+.verifyPhone {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 90%;
+	margin: auto;
+	border-bottom: 1px solid #262626;
+}
+
+.verifyPhone input {
+	width: 100%;
+	height: 56px;
+	border: 0;
+	font-size: 16px;
+	border-radius: 0;
+	margin-bottom: 0;
+}
+
+.signupButton {
+	background-color: #4755d7;
+	color: white;
+	font-size: 16px;
+	border: 0;
+	border-radius: 8px;
+	width: 90%;
+	height: 56px;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 40px;
+	padding: 0;
+	position: relative;
+}
+
+.signupButton:hover {
+	background-color: #3a48c0;
+}
+
+.signupButton.active {
+	background-color: #4755d7;
+}
+
+.signupButton.inactive {
+	background-color: #b3b3b3;
+}
+
+.errorInput {
+	border: 1px solid red;
+}
+
+.errorMessage {
+	color: red;
+	font-size: 12px;
+	margin-top: 5px;
+}

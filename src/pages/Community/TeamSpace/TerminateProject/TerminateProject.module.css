@@ -1,0 +1,58 @@
+.terminateProject {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+.terminateProject .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	background-color: #f9f9f9;
+}
+
+.terminateProject p {
+	margin: 0;
+	font-size: 1.2rem;
+	color: #d1222e;
+}
+
+.warning {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.warningImg {
+	width: 33px;
+	margin-left: 8px;
+}
+
+.deleteButton {
+	margin-top: 20px;
+	width: 100%;
+	height: 40px;
+	border: solid 1px #d6d8db;
+	border-radius: 10px;
+	background-color: #f6f8fa;
+	color: #d1222e;
+	font-size: 1rem;
+}
+
+.backButton {
+	margin-top: 10px;
+	width: 100%;
+	height: 40px;
+	border: solid 1px #d6d8db;
+	border-radius: 10px;
+	background-color: #4755d7;
+	color: #ffffff;
+	font-size: 1rem;
+}

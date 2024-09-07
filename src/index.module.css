@@ -1,0 +1,12 @@
+body {
+	max-width: 768px;
+	font-family: "Pretendard", sans-serif;
+	padding: 0;
+	margin: 0;
+	background-color: #ffffff;
+	overflow: scroll;
+}
+
+body p {
+	margin: 0;
+}

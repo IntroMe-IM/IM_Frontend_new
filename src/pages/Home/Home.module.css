@@ -1,0 +1,27 @@
+.bannerCarousel {
+	width: 100%;
+	height: auto;
+}
+
+.bannerCarousel img {
+	width: 100%;
+	height: 100%;
+	margin-right: 10px;
+}
+
+.projectCarousel {
+	width: 90%;
+	margin-top: 10%;
+	margin-left: 5%;
+}
+
+.projectCarousel img {
+	margin-right: 10px;
+	border-radius: 10px;
+}
+
+.bizCardCarousel {
+	width: 90%;
+	margin-top: 10%;
+	margin-left: 5%;
+}

@@ -1,0 +1,129 @@
+.info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+.infoEdit {
+	display: flex;
+	flex-direction: row;
+	margin-top: 10%;
+	margin-bottom: 6%;
+	align-content: center;
+	width: 90%;
+	height: 80px;
+	border-bottom: #bebebe 1px solid;
+}
+
+.infoEdit img {
+	margin: auto;
+	margin-left: 0;
+	margin-right: 12px;
+	width: 50px;
+	height: 50px;
+}
+
+.infoEdit p {
+	margin: auto;
+	margin-left: 0;
+	margin-right: 0;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.infoEdit .arrowRight {
+	width: 20px;
+	margin: auto;
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.bizCardEdit {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 90%;
+}
+
+.bizCardEdit p {
+	margin-bottom: 10px;
+}
+
+.bizCard {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	align-items: left;
+	width: 300px;
+	height: 164px;
+	margin-bottom: 20px;
+	background-color: #262626;
+	border-radius: 10px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.bizCard .content {
+	display: flex;
+	padding: 20px;
+	flex-direction: column;
+}
+
+.bizCard .content div {
+	margin-top: 10px;
+	margin-bottom: 12px;
+}
+
+.bizCard .content div:last-child {
+	margin-bottom: 0;
+}
+
+.bizCard p {
+	color: #ffffff;
+	margin: auto;
+	margin-bottom: 8px;
+	font-weight: lighter;
+}
+
+.bizCardLogo {
+	position: absolute;
+	font-family: "Roboto", sans-serif;
+	right: 20px;
+	bottom: 20px;
+}
+
+.infoBanner {
+	width: 90%;
+	margin-bottom: 20px;
+}
+
+.infoItems {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 90%;
+}
+
+.infoItem {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 60px;
+	border-bottom: #bebebe 1px solid;
+}
+
+.itemContent {
+	display: flex;
+	flex-direction: row;
+}
+
+.itemContent img {
+	margin: auto;
+	margin-left: 0;
+	margin-right: 12px;
+	width: 20px;
+}

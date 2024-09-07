@@ -1,0 +1,121 @@
+.Login {
+	width: 100%;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	margin-top: 100px;
+}
+
+.logo {
+	display: inline-block;
+	height: 70px;
+	margin: auto;
+	margin-bottom: 40px;
+}
+
+.loginForm {
+	width: 100%;
+	align-items: center;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.input_container {
+	width: 80%;
+	margin: auto;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #262626;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+}
+
+.loginForm input {
+	width: 100%;
+	height: 56px;
+	border: 0;
+	font-size: 16px;
+}
+
+.loginForm input:focus {
+	outline: none;
+}
+
+.clear_btn {
+	z-index: 1;
+	position: absolute;
+	right: 0;
+	top: 30%;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.hidden_btn {
+	z-index: 1;
+	position: absolute;
+	right: 0;
+	top: 30%;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.loginForm input::placeholder {
+	color: #6e6e6e;
+}
+
+.loginButton {
+	background-color: #4755d7;
+	color: white;
+	font-size: 16px;
+	border: 0;
+	border-radius: 8px;
+	width: 80%;
+	height: 50px;
+	margin: auto;
+	margin-top: 20px;
+	padding: 0;
+	position: relative;
+}
+
+.loginButton:hover {
+	background-color: #3a48c0;
+}
+
+.loginButton:active {
+	background-color: #2e3a9f;
+}
+
+.options {
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 13px;
+}
+
+.options input {
+	width: 14px;
+	height: 14px;
+	margin-right: 10px;
+}
+
+.options a {
+	color: #999999;
+	text-decoration: none;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #999999;
+	margin-right: 12px;
+}
+
+.options a:last-child {
+	margin-right: 0;
+}

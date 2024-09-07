@@ -1,0 +1,17 @@
+.swiper {
+	margin: 0;
+}
+
+.swiper-slide {
+	width: 300px;
+	margin-left: 40px;
+	transition: margin-left 0.2s ease;
+}
+
+.swiper-slide-active {
+	margin-left: 0;
+}
+
+.swiper-slide-prev {
+	margin-top: 5%;
+}

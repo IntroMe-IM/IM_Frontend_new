@@ -1,0 +1,73 @@
+/* NavBar.module.css */
+.navbar {
+	z-index: 1000;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100vw;
+	height: 60px;
+	background-color: #fff;
+	box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+
+.navWrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40%;
+}
+
+.navItem {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #ccc;
+	font-size: 12px;
+	width: 50px; /* 고정된 너비 */
+	cursor: pointer;
+	margin-right: 15px;
+}
+
+.navItem:last-child {
+	margin-right: 0;
+}
+
+.navItem .icon {
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+
+.navItem.active {
+	color: #000;
+}
+
+.navItem.active .icon {
+	filter: invert(1);
+}
+
+.centralButton {
+	position: absolute;
+	top: -28px; /* 네비게이션 바 위로 떠오르게 */
+	left: 50%;
+	transform: translateX(-50%);
+	width: 56px;
+	height: 56px;
+	background-color: #000000;
+	color: #fff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	z-index: 2000;
+}
+
+.centralIcon {
+	font-size: 30px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}

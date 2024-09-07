@@ -1,0 +1,127 @@
+.share {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+}
+
+.header {
+	position: relative;
+	margin-top: 40px;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: center;
+	margin-bottom: 40px;
+}
+
+.header div {
+	position: absolute;
+	left: 4%;
+}
+
+.header p {
+	margin: 0;
+	font-size: 1.2rem;
+}
+
+.bizCard {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	align-items: left;
+	width: 300px;
+	height: 164px;
+	margin-bottom: 40px;
+	background-color: #262626;
+	border-radius: 10px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.bizCard .content {
+	display: flex;
+	padding: 20px;
+	flex-direction: column;
+}
+
+.bizCard .content div {
+	margin-top: 10px;
+	margin-bottom: 12px;
+}
+
+.bizCard .content div:last-child {
+	margin-bottom: 0;
+}
+
+.bizCard p {
+	color: #ffffff;
+	margin: auto;
+	margin-bottom: 8px;
+	font-weight: lighter;
+}
+
+.bizCardLogo {
+	position: absolute;
+	font-family: "Roboto", sans-serif;
+	right: 20px;
+	bottom: 20px;
+}
+
+.shareQR {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 90%;
+	margin-bottom: 40px;
+}
+
+.shareQR p {
+	margin-bottom: 10px;
+}
+
+.copyUrl {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-items: center;
+	width: 90%;
+	margin-top: 20px;
+}
+
+.copyUrl img {
+	filter: invert(1);
+}
+
+.copyUrl p {
+	margin: 0;
+	margin-left: 10px;
+	font-size: 1rem;
+	color: #ffffff;
+}
+
+.copyButton {
+	display: flex;
+	margin: auto;
+	width: 80%;
+	height: 40px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	border-style: none;
+	border-radius: 8px;
+	background-color: #4755d7;
+}
+
+.snsIcons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 90%;
+	margin-top: 20px;
+}
+
+.snsIcons img {
+	margin: 0 10px;
+	width: 50px;
+}
