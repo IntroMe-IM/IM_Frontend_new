@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 import styles from './OpenSpace.module.css';
 import { useNavigate } from "react-router-dom";
+import API_URL from "../../../config";
 
 const OpenSpace = () =>
 {
@@ -13,7 +14,7 @@ const OpenSpace = () =>
   {
     try
     {
-      const response = await axios.post('http://192.168.0.7:8080/v1/board/page', {
+      const response = await axios.post(`${API_URL}/v1/board/page`, {
         "page": index,
         "size": 100,
       }, {

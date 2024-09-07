@@ -3,8 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { getCookie } from '../../../../utils/cookies';
 import styles from './TerminateProject.module.css';
-
 import { toast, ToastContainer } from 'react-toastify';
+import API_URL from "../../../../config";
 
 const TerminateProject = () =>
 {
@@ -17,7 +17,7 @@ const TerminateProject = () =>
 
   const handleTerminate = async () =>
   {
-    const response = await axios.post(`/v1/team/terminate`,
+    const response = await axios.post(`${API_URL}/v1/team/terminate`,
       {
         "ownerId": userData.id,
         "teamId": teamId,

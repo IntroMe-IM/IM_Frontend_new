@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from "react";
 import BizCard from "../BizCard";
 import styles from './BizCardDetail.module.css';
+import API_URL from "../../../config";
 
 const BizCardDetail = () => {
   let { userId } = useParams();
@@ -16,7 +17,7 @@ const BizCardDetail = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://192.168.0.7:8080/v1/card/${userId}`);
+        const response = await axios.get(`${API_URL}/v1/card/${userId}`);
         const data = response.data;
 
         if (data.length !== 0) {

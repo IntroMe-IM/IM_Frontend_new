@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { getCookie } from '../../../../utils/cookies';
 import { useParams } from 'react-router-dom';
+import API_URL from "../../../../config";
 
 const EditPost = () =>
 {
@@ -27,7 +28,7 @@ const EditPost = () =>
   {
     try
     {
-      const response = await axios.get(`https://introme.co.kr/v1/board/${postId}`);
+      const response = await axios.get(`${API_URL}/v1/board/${postId}`);
 
       if (response.data)
       {
@@ -58,7 +59,7 @@ const EditPost = () =>
     const decodedMemberCookie = decodeURIComponent(memberCookie);
     const userData = JSON.parse(decodedMemberCookie);
 
-    const response = await axios.put(`https://introme.co.kr/v1/board/${postId}`, {
+    const response = await axios.put(`${API_URL}/v1/board/${postId}`, {
       "title": title,
       "content": content,
       "updatedAt": "2024-06-15",

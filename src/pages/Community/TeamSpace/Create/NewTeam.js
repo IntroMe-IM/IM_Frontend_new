@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { getCookie } from '../../../../utils/cookies';
 import axios from 'axios';
 import styles from './NewTeam.module.css';
+import API_URL from "../../../../config";
 
 const NewTeam = () => {
   const [title, setTitle] = useState('');
@@ -53,7 +54,7 @@ const NewTeam = () => {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('/v1/team/build', formData, {
+      const response = await axios.post(`${API_URL}/v1/team/build`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

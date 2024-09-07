@@ -4,6 +4,7 @@ import styles from './Info.module.css';
 import axios from 'axios';
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import API_URL from "../../config";
 
 const Info = () =>
 {
@@ -18,7 +19,7 @@ const Info = () =>
   {
     try
     {
-      const response = await axios.get(`http://192.168.0.7:8080/v1/card/${userData.id}`);
+      const response = await axios.get(`${API_URL}/v1/card/${userData.id}`);
       setBizCard(response.data);
     } catch (error)
     {

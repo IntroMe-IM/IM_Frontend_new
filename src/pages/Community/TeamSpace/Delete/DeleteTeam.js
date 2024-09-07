@@ -2,10 +2,9 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { getCookie } from '../../../../utils/cookies';
-
 import { toast, ToastContainer } from 'react-toastify';
-
 import styles from './DeleteTeam.module.css';
+import API_URL from "../../../../config";
 
 const DeleteTeam = () =>
 {
@@ -18,7 +17,7 @@ const DeleteTeam = () =>
 
   const handleDelete = async () =>
   {
-    const response = await axios.delete(`/v1/team/${teamId}/${userData.id}`);
+    const response = await axios.delete(`${API_URL}/v1/team/${teamId}/${userData.id}`);
     if (response.data)
     {
       toast.success('프로젝트가 종료되었습니다.');

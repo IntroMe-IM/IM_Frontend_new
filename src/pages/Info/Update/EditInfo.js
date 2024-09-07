@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './EditInfo.module.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_URL from "../../../config";
 
 const EditInfo = () => {
   const memberCookie = getCookie('memberCookie');
@@ -66,7 +67,7 @@ const EditInfo = () => {
     try {
       console.log("Updating user data:", updatedUserInfo); // Add logging to see what's being updated
       const response = await axios.put(
-        `http://192.168.0.7:8080/v1/member/${userData.id}`,
+        `${API_URL}/v1/member/${userData.id}`,
         updatedUserInfo,
         {
           headers: {

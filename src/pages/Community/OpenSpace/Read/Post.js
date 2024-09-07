@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import styles from './Post.module.css';
 import DropdownMenu from "../../../../components/DropDownMenu";
+import API_URL from "../../../../config";
 
 const Post = () =>
 {
@@ -36,7 +37,7 @@ const Post = () =>
   {
     try
     {
-      const response = await axios.get(`/v1/board/${postId}`);
+      const response = await axios.get(`${API_URL}/v1/board/${postId}`);
 
       // 서버에서 받아온 데이터의 content 속성 확인
       if (response.data)
@@ -61,7 +62,7 @@ const Post = () =>
   {
     try
     {
-      const response = await axios.get(`/v1/comment/${postId}`);
+      const response = await axios.get(`${API_URL}/v1/comment/${postId}`);
 
       // 서버에서 받아온 데이터의 content 속성 확인
       if (response.data)
@@ -82,7 +83,7 @@ const Post = () =>
   {
     try
     {
-      const response = await axios.post(`/v1/comment/`,
+      const response = await axios.post(`${API_URL}/v1/comment/`,
         {
           "content": commentContent,
           "author": userId,

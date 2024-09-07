@@ -5,6 +5,7 @@ import { useCookies } from 'react-cookie';
 import styles from './Signin.module.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
+import API_URL from "../../config";
 
 const Signin = () =>
 {
@@ -20,7 +21,7 @@ const Signin = () =>
 
     try
     {
-      const response = await axios.post('http://192.168.0.7:8080/v1/member/signin', {
+      const response = await axios.post(`${API_URL}/v1/member/signin`, {
         "email": email,
         "password": password
       }, {

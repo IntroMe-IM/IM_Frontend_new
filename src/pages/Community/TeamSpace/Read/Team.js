@@ -5,6 +5,7 @@ import { getCookie } from "../../../../utils/cookies";
 
 import styles from './Team.module.css';
 import DropdownMenu from "../../../../components/DropDownMenu";
+import API_URL from "../../../../config";
 
 const Team = () =>
 {
@@ -35,7 +36,7 @@ const Team = () =>
   {
     try
     {
-      const response = await axios.get(`/v1/team/d/${teamId}`);
+      const response = await axios.get(`${API_URL}/v1/team/d/${teamId}`);
 
       // 서버에서 받아온 데이터의 content 속성 확인
       if (response.data)

@@ -3,6 +3,7 @@ import { getCookie } from "../../../utils/cookies";
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from './TeamSpace.module.css'; // 해당 경로를 실제 경로로 수정해야 합니다.
+import API_URL from "../../../config";
 
 const TeamSpace = () => {
   const [teams, setTeams] = useState([]);
@@ -14,7 +15,7 @@ const TeamSpace = () => {
       const userData = JSON.parse(decodedMemberCookie);
 
       const userId = userData.id;
-      const response = await axios.get('http://192.168.0.7:8080/v1/team/' + userId);
+      const response = await axios.get(`${API_URL}/v1/team/` + userId);
 
       setTeams(response.data);
 

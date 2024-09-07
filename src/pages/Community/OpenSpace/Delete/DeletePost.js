@@ -2,10 +2,9 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { getCookie } from '../../../../utils/cookies';
-
 import { toast, ToastContainer } from 'react-toastify';
-
 import styles from './DeletePost.module.css';
+import API_URL from "../../../../config";
 
 const DeletePost = () =>
 {
@@ -18,7 +17,7 @@ const DeletePost = () =>
 
   const handleDelete = async () =>
   {
-    const response = await axios.delete(`/v1/board/${postId}/${userData.id}`);
+    const response = await axios.delete(`${API_URL}/v1/board/${postId}/${userData.id}`);
     if (response.data)
     {
       toast.success('게시글이 삭제되었습니다.');

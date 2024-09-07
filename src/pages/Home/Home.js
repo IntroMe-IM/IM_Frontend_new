@@ -1,10 +1,10 @@
 import styles from './Home.module.css';
 import CustomCarousel from '../../components/CustomCarousel';
 import BizCard from '../BizCard/BizCard';
-
 import { React, useEffect, useState } from 'react';
 import { getCookie } from '../../utils/cookies';
 import axios from 'axios';
+import API_URL from "../../config";
 
 const Home = () =>
 {
@@ -63,7 +63,7 @@ const Home = () =>
         const userData = JSON.parse(decodedMemberCookie);
 
         const userId = userData.id;
-        const response = await axios.get('http://192.168.0.7:8080/v1/card/shared-cards/' + userId);
+        const response = await axios.get(`${API_URL}/v1/card/shared-cards/` + userId);
         const data = response.data;
 
         if (data.length !== 0)

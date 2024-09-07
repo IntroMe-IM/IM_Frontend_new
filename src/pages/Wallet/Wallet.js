@@ -4,6 +4,7 @@ import CircularCarousel from "../../components/CircularCarousel";
 import { getCookie } from "../../utils/cookies";
 import axios from 'axios';
 import BizCard from '../BizCard/BizCard';
+import API_URL from "../../config";
 
 const Wallet = () => {
   const [items, setItems] = useState([]);
@@ -22,7 +23,7 @@ const Wallet = () => {
         const userData = JSON.parse(decodedMemberCookie);
         const userId = userData.id;
 
-        const response = await axios.get(`http://192.168.0.7:8080/v1/card/shared-cards/${userId}`);
+        const response = await axios.get(`${API_URL}/v1/card/shared-cards/${userId}`);
         const data = response.data;
         console.log(data);
 

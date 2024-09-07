@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getCookie } from '../../../../utils/cookies';
 import axios from 'axios';
-
 import styles from './NewPost.module.css';
+import API_URL from "../../../../config";
 
 const NewPost = () =>
 {
@@ -36,7 +36,7 @@ const NewPost = () =>
     const decodedMemberCookie = decodeURIComponent(memberCookie);
     const userData = JSON.parse(decodedMemberCookie);
 
-    const response = await axios.post('/v1/board/', {
+    const response = await axios.post(`${API_URL}/v1/board/`, {
       "author": userData.id,
       "title": title,
       "content": content
