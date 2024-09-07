@@ -23,7 +23,7 @@ const EditBizCard = () =>
   {
     try
     {
-      const response = await axios.get(`/v1/card/${userId}`);
+      const response = await axios.get(`http://192.168.0.7:8080/v1/card/${userId}`);
       const data = response.data;
 
       // color가 null인 경우 기본값 #262626 설정
@@ -55,7 +55,7 @@ const EditBizCard = () =>
   {
     try
     {
-      await axios.put(`/v1/card/${userId}`,
+      await axios.put(`http://192.168.0.7:8080/v1/card/${userId}`,
         {
           name: bizCard.name,
           company: bizCard.company,

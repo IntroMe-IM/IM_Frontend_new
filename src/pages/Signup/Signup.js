@@ -56,7 +56,7 @@ const Signup = () =>
 
     try
     {
-      const response = await axios.post('/v1/member/verify-phone', {
+      const response = await axios.post('http://192.168.0.7:8080/v1/member/verify-phone', {
         phoneNumber: phoneNumber
       }, {
         headers: {
@@ -88,7 +88,7 @@ const Signup = () =>
 
       const formattedBirth = `${year}-${month}-${day}`;
 
-      const response = await axios.post('https://introme.co.kr/v1/member/signup?verificationCode=' + verifyNumber, {
+      const response = await axios.post('http://192.168.0.7:8080/v1/member/signup?verificationCode=' + verifyNumber, {
         name: name,
         birth: formattedBirth,
         email: email,

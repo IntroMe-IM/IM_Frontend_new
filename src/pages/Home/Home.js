@@ -63,7 +63,7 @@ const Home = () =>
         const userData = JSON.parse(decodedMemberCookie);
 
         const userId = userData.id;
-        const response = await axios.get('/v1/card/shared-cards/' + userId);
+        const response = await axios.get('http://192.168.0.7:8080/v1/card/shared-cards/' + userId);
         const data = response.data;
 
         if (data.length !== 0)
