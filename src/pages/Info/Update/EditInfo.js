@@ -31,7 +31,7 @@ const EditInfo = () =>
   {
     try
     {
-      const response = await axios.put(`https://introme.co.kr/v1/member/${userData.id}`,
+      const response = await axios.put(`/v1/member/${userData.id}`,
         {
           name: userInfo.name,
           mbti: userInfo.mbti,

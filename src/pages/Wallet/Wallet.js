@@ -5,58 +5,59 @@ import { getCookie } from "../../utils/cookies";
 import axios from 'axios';
 import BizCard from '../BizCard/BizCard';
 
-const Wallet = () =>
-{
+const Wallet = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  useEffect(() =>
-  {
-    const fetchData = async () =>
-    {
-      try
-      {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
         const memberCookie = getCookie('memberCookie');
+        if (!memberCookie) {
+          throw new Error('No member cookie found');
+        }
+
         const decodedMemberCookie = decodeURIComponent(memberCookie);
         const userData = JSON.parse(decodedMemberCookie);
-
         const userId = userData.id;
-        const response = await axios.get('/v1/card/shared-cards/' + userId);
-        const data = response.data;
 
-        if (data.length !== 0)
-        {
+        const response = await axios.get(`/v1/card/shared-cards/${userId}`);
+        const data = response.data;
+        console.log(data);
+
+        if (Array.isArray(data) && data.length > 0) {
           const items = data.map((item, index) => (
             <BizCard key={index} bizCard={item} isNavigate={true} />
           ));
           setItems(items);
-        } else
-        {
-          setItems([]);
+        } else {
+          setItems([]);  // Set to empty array if no cards are received
+          setLoading(false);
         }
-      } catch (error)
-      {
-        console.error('카드 정보를 불러오는 중 오류 발생', error);
-      } finally
-      {
-        setLoading(false);
-      }
+      } catch (error) {
+        console.error('Error fetching card information:', error);
+        setError('An error occurred while fetching card information.');  // Set error state
+      } 
+      setLoading(false);
     };
 
     fetchData();
   }, []);
 
-  if (loading)
-  {
-    return <div>로딩 중...</div>;
+  if (loading) {
+    return <div>Loading...</div>;  // Show loading indicator while fetching data
   }
 
-  // 슬라이드 개수 체크 및 복제
-  const minSlides = 4; // 최소 슬라이드 개수 설정 (예: 3)
-  const extendedItems = items.length > 0 ? [...items] : [];
-  while (extendedItems.length < minSlides)
-  {
-    extendedItems.push(...items);
+  if (error) {
+    return <div className={styles.error}>{error}</div>;  // Display error message
+  }
+
+  // Ensure a minimum number of slides for the carousel
+  const minSlides = 4;
+  const extendedItems = [...items];
+  while (extendedItems.length < minSlides) {
+    extendedItems.push(...items);  // Duplicate items to meet minimum slide requirement
   }
 
   return (
@@ -65,10 +66,10 @@ const Wallet = () =>
         <div className={styles.innerCircle} />
       </div>
       {items.length > 0 ? (
-        <CircularCarousel items={extendedItems} />
+        <CircularCarousel items={extendedItems} />  // Show carousel if items are present
       ) : (
         <div className={styles.noCard}>
-          <p>받은 명함이 없습니다.</p>
+          <p>No business cards received.</p>  // Show message if no items are present
         </div>
       )}
     </div>
