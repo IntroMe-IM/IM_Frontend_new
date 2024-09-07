@@ -13,7 +13,7 @@ const OpenSpace = () =>
   {
     try
     {
-      const response = await axios.post('/v1/board/page', {
+      const response = await axios.post('http://192.168.0.7:8080/v1/board/page', {
         "page": index,
         "size": 100,
       }, {

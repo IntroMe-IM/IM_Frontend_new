@@ -22,7 +22,7 @@ const Wallet = () => {
         const userData = JSON.parse(decodedMemberCookie);
         const userId = userData.id;
 
-        const response = await axios.get(`/v1/card/shared-cards/${userId}`);
+        const response = await axios.get(`http://192.168.0.7:8080/v1/card/shared-cards/${userId}`);
         const data = response.data;
         console.log(data);
 
@@ -32,12 +32,11 @@ const Wallet = () => {
           ));
           setItems(items);
         } else {
-          setItems([]);  // Set to empty array if no cards are received
-          setLoading(false);
+          setItems([]);  // 명함이 없을 경우 빈 배열로 설정
         }
       } catch (error) {
         console.error('Error fetching card information:', error);
-        setError('An error occurred while fetching card information.');  // Set error state
+        setError('명함 정보를 불러오는 중 오류가 발생했습니다.');  // 오류 메시지 한글로 설정
       } 
       setLoading(false);
     };
@@ -46,18 +45,11 @@ const Wallet = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;  // Show loading indicator while fetching data
+    return <div>로딩 중...</div>;
   }
 
   if (error) {
-    return <div className={styles.error}>{error}</div>;  // Display error message
-  }
-
-  // Ensure a minimum number of slides for the carousel
-  const minSlides = 4;
-  const extendedItems = [...items];
-  while (extendedItems.length < minSlides) {
-    extendedItems.push(...items);  // Duplicate items to meet minimum slide requirement
+    return <div className={styles.error}>{error}</div>;
   }
 
   return (
@@ -66,10 +58,10 @@ const Wallet = () => {
         <div className={styles.innerCircle} />
       </div>
       {items.length > 0 ? (
-        <CircularCarousel items={extendedItems} />  // Show carousel if items are present
+        <CircularCarousel items={items} />
       ) : (
         <div className={styles.noCard}>
-          <p>No business cards received.</p>  // Show message if no items are present
+          <p>공유받은 명함이 없습니다.</p>
         </div>
       )}
     </div>

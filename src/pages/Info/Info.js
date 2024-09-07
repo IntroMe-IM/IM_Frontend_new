@@ -18,7 +18,7 @@ const Info = () =>
   {
     try
     {
-      const response = await axios.get(`/v1/card/${userData.id}`);
+      const response = await axios.get(`http://192.168.0.7:8080/v1/card/${userData.id}`);
       setBizCard(response.data);
     } catch (error)
     {

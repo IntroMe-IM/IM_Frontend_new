@@ -14,7 +14,7 @@ const TeamSpace = () => {
       const userData = JSON.parse(decodedMemberCookie);
 
       const userId = userData.id;
-      const response = await axios.get('/v1/team/' + userId);
+      const response = await axios.get('http://192.168.0.7:8080/v1/team/' + userId);
 
       setTeams(response.data);
 
